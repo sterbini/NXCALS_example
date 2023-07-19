@@ -3,3 +3,12 @@ Miniforge3-Linux-x86_64.sh
 venv/
 ${user.home}
 example/${user.home}
+nx2pd/build/lib/nx2pd/__init__.py
+nx2pd/build/lib/nx2pd/nx2pd.py
+nx2pd/nx2pd/__pycache__/__init__.cpython-310.pyc
+nx2pd/nx2pd/__pycache__/nx2pd.cpython-310.pyc
+nx2pd/nx2pd.egg-info/dependency_links.txt
+nx2pd/nx2pd.egg-info/not-zip-safe
+nx2pd/nx2pd.egg-info/PKG-INFO
+nx2pd/nx2pd.egg-info/SOURCES.txt
+nx2pd/nx2pd.egg-info/top_level.txt

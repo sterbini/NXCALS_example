@@ -6,17 +6,17 @@ import getpass
 import logging
 import sys
 
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+# logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
-os.environ['PYSPARK_PYTHON'] = "./environment/bin/python"
-username = getpass.getuser()
-print(f'Assuming that your kerberos keytab is in the home folder, '
-      f'its name is "{getpass.getuser()}.keytab" '
-      f'and that your kerberos login is "{username}".')
+# os.environ['PYSPARK_PYTHON'] = "./environment/bin/python"
+# username = getpass.getuser()
+# print(f'Assuming that your kerberos keytab is in the home folder, '
+#       f'its name is "{getpass.getuser()}.keytab" '
+#       f'and that your kerberos login is "{username}".')
 
-logging.info('Executing the kinit')
-os.system(f'kinit -f -r 5d -kt {os.path.expanduser("~")}/'+
-          f'{getpass.getuser()}.keytab {getpass.getuser()}');
+# logging.info('Executing the kinit')
+# os.system(f'kinit -f -r 5d -kt {os.path.expanduser("~")}/'+
+#           f'{getpass.getuser()}.keytab {getpass.getuser()}');
 
 # %%
 import json
@@ -36,14 +36,7 @@ logging.info('Creating the spark instance')
 # spark = get_or_create(flavor=Flavor.LOCAL)
 
 logging.info('Creating the spark instance')
-spark = get_or_create(flavor=Flavor.LOCAL,
-conf={'spark.driver.maxResultSize': '8g',
-    'spark.executor.memory':'8g',
-    'spark.driver.memory': '16g',
-    'spark.executor.instances': '20',
-    'spark.executor.cores': '2',
-    })
-#spark = get_or_create(flavor=Flavor.YARN_SMALL, master='yarn')
+spark = get_or_create('My_APP')
 sk  = nx.SparkIt(spark)
 logging.info('Spark instance created.')
 

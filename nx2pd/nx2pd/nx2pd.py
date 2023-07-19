@@ -230,7 +230,7 @@ class SparkIt:
 
         return df
 
-    def get(self, t0, t1, data, pandas_index_localize=True):
+    def get(self, t0, t1, data, index_localize=True):
         my_var = self.get_variables(data)
         my_df = []
 
@@ -244,8 +244,8 @@ class SparkIt:
                             pandas_pivot])
             my_df.append(df.sort_index())
         my_df = pd.concat(my_df, axis=1).sort_index()
-        if pandas_index_localize:
-            nx.pandas_index_localize(my_df)
+        if index_localize:
+            pandas_index_localize(my_df)
         return my_df
     
     def get_last_event(self, data_list, t1 = pd.Timestamp.now(tz='UTC'), timedelta = pd.Timedelta(days=1)):
