@@ -6,3 +6,4 @@ source ./venv/bin/activate
 python -m pip install -r requirements.txt
 python -m pip install git+https://gitlab.cern.ch/acc-co/devops/python/acc-py-pip-config.git
 python -m pip install nxcals
+python -m pip install -e nx2pd
