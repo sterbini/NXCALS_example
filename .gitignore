@@ -2,3 +2,4 @@ miniforge/
 Miniforge3-Linux-x86_64.sh
 venv/
 ${user.home}
+example/${user.home}

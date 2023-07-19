@@ -7,3 +7,4 @@ df = DataQuery.builder(spark).entities().system('CMW') \
     .keyValuesEq({'device': 'LHC.LUMISERVER', 'property': 'CrossingAngleIP1'}) \
     .timeWindow('2022-04-22 00:00:00.000', '2022-04-23 00:00:00.000') \
     .build()
+# %%
